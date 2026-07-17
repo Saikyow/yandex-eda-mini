@@ -1,5 +1,9 @@
 package fedor.dev.payment.domain;
 
+import fedor.dev.api.http.payment.CreatePaymentRequestDto;
+import fedor.dev.api.http.payment.CreatePaymentResponseDto;
+import fedor.dev.api.http.payment.PaymentMethod;
+import fedor.dev.api.http.payment.PaymentStatus;
 import fedor.dev.payment.domain.db.PaymentEntityMapper;
 import fedor.dev.payment.domain.db.PaymentEntityRepository;
 import lombok.AllArgsConstructor;
@@ -31,6 +35,7 @@ public class PaymentService {
                 : PaymentStatus.PAYMENT_SUCCEEDED;
 
         entity.setPaymentStatus(status);
+
 
         var savedEntity = repository.save(entity);
         return mapper.toResponseDto(savedEntity);

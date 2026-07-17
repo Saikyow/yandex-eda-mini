@@ -3,7 +3,7 @@ package fedor.dev.api.http.order;
 public enum OrderStatus {
     PENDING_PAYMENT,
     PAID,
-    PENDING_DELIVERY,
+    DELIVERY_ASSIGNED,
     PAYMENT_FAILED,
     DELIVERED;
 }

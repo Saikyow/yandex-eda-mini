@@ -1,5 +1,7 @@
 package fedor.dev.payment.domain.db;
 
+import fedor.dev.api.http.payment.PaymentMethod;
+import fedor.dev.api.http.payment.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

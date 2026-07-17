@@ -29,6 +29,13 @@ public class OrderController {
         return orderEntityMapper.toOrderDto(entity);
     }
 
+    @PostMapping
+    public OrderDto create(@RequestBody CreateOrderRequestDto request) {
+        log.info("Creating order: request={}", request);
+        var saved = orderProcessor.create(request);
+        return orderEntityMapper.toOrderDto(saved);
+    }
+
     @GetMapping("/{id}")
     public OrderDto getOne(@PathVariable Long id) {
         log.info("Retrieving order with id {}", id);
